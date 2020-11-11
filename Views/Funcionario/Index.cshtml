@@ -1,0 +1,16 @@
+@model IEnumerable<EFCore.Models.Funcionario>
+
+<h2>Todos os funcionários</h2>
+
+<a href="/Funcionario/Cadastrar" class="btn btn-success">Novo Funcionário</a>
+<hr>
+
+@foreach (var item in Model)
+{
+    <p>CPF: @item.Cpf</p>
+    <p>Nome: @item.Nome</p>
+    <p>Salário: @item.Salario</p>
+    <a href="/Funcionario/Editar/@item.Id" class="btn btn-success">Editar</a>
+    <a href="/Funcionario/Deletar/@item.Id" class="btn btn-danger">Deletar</a>
+    <hr>
+}
